@@ -123,7 +123,9 @@
         [self loadContactsFromAddressBook:addressBook callback:callback];
     }
     else {
-        CFRelease(addressBook);
+        if (addressBook != nil) {
+            CFRelease(addressBook);
+        }
         callback(NO, nil);
     }
 }
