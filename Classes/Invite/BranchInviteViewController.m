@@ -286,7 +286,6 @@ static inline void BNCPerformBlockOnMainThreadAsync(void(^block)(void)) {
 #pragma mark - Internal Methods
 
 - (void)filterContactsForSearchText {
-    BNCLogAssert([NSThread isMainThread]);
     NSString *searchText = self.searchBar.text;
     id <BranchInviteContactProvider> provider = self.contactProviders[self.segmentedControl.selectedSegmentIndex];
     NSArray *allContactsForProvider = [provider contacts];
